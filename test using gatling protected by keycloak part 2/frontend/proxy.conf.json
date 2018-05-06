@@ -1,0 +1,14 @@
+{   "/OpenIDConnectDemo": {
+      "target": "http://localhost:8081",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "info"
+  },
+  "/auth": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  }
+
+}

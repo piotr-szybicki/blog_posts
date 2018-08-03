@@ -1,0 +1,26 @@
+<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-2.0.xsd"
+           xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <group>
+        <name>gcp-cluster</name>
+    </group>
+    <network>
+        <port auto-increment="false">5701</port>
+        <join>
+            <multicast enabled="false" />
+            <tcp-ip enabled="true">
+                <interface>192.168.1.2</interface>
+                <interface>192.168.1.3</interface>
+            </tcp-ip>
+        </join>
+        <interfaces enabled="false" />
+    </network>
+    <map name="example-map">
+        <backup-count>1</backup-count>
+        <time-to-live-seconds>0</time-to-live-seconds>
+        <max-idle-seconds>0</max-idle-seconds>
+        <eviction-policy>NONE</eviction-policy>
+        <eviction-percentage>25</eviction-percentage>
+        <merge-policy>hz.ADD_NEW_ENTRY</merge-policy>
+    </map>
+</hazelcast>

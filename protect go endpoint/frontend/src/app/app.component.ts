@@ -7,14 +7,15 @@ import {HttpClient, HttpSentEvent, HttpHeaders} from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  public title:string = 'app';
 
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {
   }
 
-  myEvent(event) {
+
+  myEvent(event:Event) {
    this.httpClient.get('http://localhost:8080/dupa')
    .subscribe(resp => {
      console.log(resp)

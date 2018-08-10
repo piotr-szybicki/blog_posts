@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
 
   myEvent(event:Event) {
-   this.httpClient.get('http://localhost:8080/dupa')
+   this.httpClient.get('/dupa')
    .subscribe(resp => {
      console.log(resp)
    })

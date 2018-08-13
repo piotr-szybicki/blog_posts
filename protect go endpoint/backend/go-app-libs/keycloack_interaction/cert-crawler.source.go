@@ -23,7 +23,7 @@ func FetchPublicKey(ctx context.Context) rsa.PublicKey {
 	certs := datamodel.Certs{}
 	json.Unmarshal(body, &certs)
 
-	log.Debugf(ctx, "json %v", certs)
+	log.Debugf(ctx, "json with certs: %v", certs)
 
 	modulus, _ := base64.URLEncoding.DecodeString(certs.Keys[0].N + "=")
 	exponent, _ := base64.URLEncoding.DecodeString(certs.Keys[0].E)

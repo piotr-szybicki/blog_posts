@@ -1,0 +1,5 @@
+rootProject.name = 'CarDelership'
+
+include 'API'
+include 'CommandModel'
+include 'QueryModel'

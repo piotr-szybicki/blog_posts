@@ -27,5 +27,5 @@ public class CarOffersImpl implements CarOffers {
     public Mono<CarOfferDetailsDTO> carDetails(String id) {
         return carOffersDetailsRepo.findById(id);
     }
-
+    
 }

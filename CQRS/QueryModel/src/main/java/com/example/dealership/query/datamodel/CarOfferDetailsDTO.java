@@ -19,6 +19,15 @@ public class CarOfferDetailsDTO {
     public final BigDecimal price;
     public final String currency;
 
+    public CarOfferDetailsDTO() {
+        id = null;
+        make = null;
+        currency = null;
+        yearOfProduction = null;
+        model = null;
+        price = null;
+    }
+
     public CarOfferDetailsDTO(String id, String make, String model, String yearOfProduction, BigDecimal price, String currency) {
         this.id = id;
         this.make = make;

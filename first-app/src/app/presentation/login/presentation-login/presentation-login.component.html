@@ -1,0 +1,28 @@
+<div layout="column" class="loginBox md-whiteframe-z1">
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+  <mat-card-content>
+      <table class="example-full-width">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+            <input matInput placeholder="Username" name="username" required [formControlName]="'username'">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+        <td><mat-form-field class="example-full-width">
+          <input matInput placeholder="Chat room name:" type="password" name="password" required [formControlName]="'chatroomname'">
+        </mat-form-field></td>
+        </tr>
+    </table>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+  </mat-card-actions>
+  </form>
+</mat-card>
+</div>

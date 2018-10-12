@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: fanout-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: web-server
+          servicePort: 80
+      - path: /chat/*
+        backend:
+          serviceName: chat-server
+          servicePort: 8080

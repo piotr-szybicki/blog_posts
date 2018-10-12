@@ -1,0 +1,14 @@
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.loginBox {
+  max-width:  90%;
+  padding: 70px 0;
+  margin: auto;
+  width: 500px
+}

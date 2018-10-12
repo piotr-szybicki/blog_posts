@@ -1,0 +1,25 @@
+  <div class="chat-container">
+    <mat-card class="main-card">
+      <mat-list class="chat-list">
+        <mat-list-item *ngFor="let message of messages" [ngClass]="[(message.Sender === user)? 'chat-list-item': 'chat-list-item-oponent']">
+          <h4 mat-line>
+            <b>{{message.Payload.text}}</b>
+          </h4>
+        </mat-list-item>
+      </mat-list>
+      <div class="chat-footer-container">
+        <mat-icon>message</mat-icon>
+        <form [formGroup]="messageForm" (ngSubmit)="sendMessage()">
+        <mat-form-field class="chat-input">
+          <input matInput
+                 #inputMessage
+                 maxlength="140"
+                 placeholder="Type your message"
+                 [formControlName]="'messageText'"
+                 name="messageText">
+          <mat-hint align="end">{{inputMessage.value.length}}/140</mat-hint>
+        </mat-form-field>
+        </form>
+      </div>
+    </mat-card>
+  </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {MsAdalAngular6Service} from 'microsoft-adal-angular6';
 
 @Component({
   selector: 'app-root',
@@ -9,21 +10,27 @@ import {HttpClient} from '@angular/common/http';
 export class AppComponent {
   title = 'azure-b2c-login';
 
-  constructor(private httpClinet: HttpClient) {}
+  constructor(private httpClient: HttpClient, private adalService: MsAdalAngular6Service) {}
 
   public call1(): void {
-    this.httpClinet.get('/home')
+    console.log(this.adalService.userInfo);
+
+    this.httpClient.get('/home')
     .subscribe(t => console.log(t));
   }
 
   public call2(): void {
-    this.httpClinet.get('/api/group1')
+    this.httpClient.get('/api/group1')
     .subscribe(t => console.log(t));
   }
 
   public call3(): void {
-    this.httpClinet.get('/api/group2')
+    this.httpClient.get('/api/group2')
     .subscribe(t => console.log(t));
+  }
+
+  public logout(): void {
+    this.adalService.logout();
   }
 
 }

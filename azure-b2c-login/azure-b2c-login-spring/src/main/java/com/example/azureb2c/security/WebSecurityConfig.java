@@ -6,9 +6,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -24,10 +22,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		//access to this url requires authentication
 		http.authorizeRequests().antMatchers("/api/**").authenticated();
-
-		//logout logic
-		http.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-			.logoutSuccessUrl("/").deleteCookies("JSESSIONID").invalidateHttpSession(true);
 
 		http.authorizeRequests().anyRequest().permitAll();
 

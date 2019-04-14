@@ -30,7 +30,7 @@ function initializer(adalService: MsAdalAngular6Service) {
       clientId: '52342c78-c557-48ef-8f09-be40c2093edf',
       redirectUri: window.location.origin,
       navigateToLoginRequestUrl: false,
-      cacheLocation: 'localStorage',
+      cacheLocation: 'localStorage'
   })
   ],
   providers: [
